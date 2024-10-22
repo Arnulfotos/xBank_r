@@ -16,5 +16,6 @@ public:
 	bool isUserLoggedIn();
 	int GetUserLogged();
 	Role GetRole();
+	void LogOff();
 };
 

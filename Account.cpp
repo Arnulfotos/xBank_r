@@ -1,4 +1,5 @@
 #include "Account.h"
+#include <iostream>
 
 Account::Account(int id, Role role, std::string name, std::string user, std::string password, std::string email, std::string phone) {
 	ID = id;
@@ -30,16 +31,25 @@ Account::Account(int id, Role role, std::string name, std::string user, std::str
 
 
 
-double Account::deposit(double quantity) {
+void Account::deposit(int quantity) {
+	
 	Balance += quantity;
-	return Balance;
+	std::cout << "Deposito exitoso, tu saldo es:" << Balance << "\n";
+
 }
 
-double Account::getBalance() {
-	return Balance;
+void Account::getBalance() {
+	std::cout << "Tu saldo es:" << Balance << "\n";
+	
 }
 
-double Account::withdraw(double quantity) {
+void Account::withdraw(int quantity) {
+	if (quantity > Balance) {
+		std::cout << "No tienes suficiente saldo\n";
+		return;
+	}
 	Balance -= quantity;
-	return Balance;
+	std::cout << "Returo exitoso, tu saldo es:" << Balance << "\n";
+
+
 }

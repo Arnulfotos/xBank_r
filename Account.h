@@ -12,16 +12,17 @@ public:
 	std::string Password;
 	int Age;
 	std::string Address;
+
 	std::string Email;
 	std::string Phone;
-	double Balance;
+	int Balance = 0;
 	bool LoggedIn;
 
 	Account(int id, Role role, std::string name, std::string user, std::string password, std::string email, std::string phone);
 	Account(int id, Role role, std::string name, std::string user, std::string password, int age, std::string address, std::string email, std::string phone, double balance);
-	double deposit(double quantity);
-	double getBalance();
-
-	double withdraw(double quantity);
+	void deposit(int quantity);
+	void getBalance();
+	
+	void withdraw(int quantity);
 };
 

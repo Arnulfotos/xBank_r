@@ -9,19 +9,22 @@ class Operations
 
 public:
 	int _input;
-	Session _logger;
+	Operations();
 	Validations Validation;
-	Accounts _lista;
-	Operations(Session logger, Accounts &list);
 
 	int action;
 	std::string inputString;
-	void ExecuteAdmin(int input);
-	void CreateUser();
-	void DeleteUser();
-	void ReadUsers();
-	void EditUsers();
-	void LogOut();
+	void ExecuteAdmin(int input, Session& session, Accounts& list);
+	void CreateUser(Accounts& list);
+	void DeleteUser(Accounts& list);
+	void ReadUsers(Accounts& list);
+	void ReadUser(Accounts& list);
+	void ExecuteClient(int input, Session& session, Accounts& list);
+	void Depositar(Session& session, Accounts& list);
+	void Retirar(Session& session, Accounts& list);
+	void EditUsers(Accounts& list);
+	void LogOut(Session& session);
+	void ReadInfo(Accounts& list);
 
 };
 

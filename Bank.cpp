@@ -8,19 +8,27 @@ void Bank::Exe() {
 	// while -> !input erroneo
 	// Agregar Validations
 
-	DisplayOnScreen.Init();
-	Logger.Authenticate(AccountsList);
+	bool exit = false;
 
-	while (Logger.isUserLoggedIn()) {
+	while (!exit) {
+		Session Logger;
+		system("cls");
+		DisplayOnScreen.Init();
+		Logger.Authenticate(AccountsList);
 
-		Controller.LoadOperations(Logger,AccountsList);
-		//DisplayOnScreen.GetUser();
-		//std::string test;
-		//std::getline(std::cin, test);
-		//system("cls");
-		//std::cout << "\nTu usuario es: " << test << "\n";
-		
+
+		while (Logger.isUserLoggedIn()) {
+			Controller.LoadOperations(Logger, AccountsList);
+			//DisplayOnScreen.GetUser();
+			//std::string test;
+			//std::getline(std::cin, test);
+			//system("cls");
+			//std::cout << "\nTu usuario es: " << test << "\n";
+		}
+
 	}
+		
+		
 
 
 }

@@ -10,7 +10,6 @@ public:
 	Bank();
 	Display DisplayOnScreen;
 	Controller Controller;
-	Session Logger;
 	void Exe();
 };
 

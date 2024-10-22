@@ -33,10 +33,14 @@ void Session::Authenticate(Accounts accountsList) {
 	std::string user;
 	std::string password;
 
-	DisplayOnScreen.GetUser();
 
+	DisplayOnScreen.GetUser();
+	if (std::cin.peek() == '\n')
+		std::cin.ignore();
 	std::getline(std::cin, user);
 	DisplayOnScreen.GetPassword();
+	if (std::cin.peek() == '\n')
+		std::cin.ignore();
 
 	std::getline(std::cin, password);
 
@@ -65,3 +69,8 @@ void Session::Authenticate(Accounts accountsList) {
 	
 }
 
+void Session::LogOff() {
+
+	std::cout << "Cerrando sesion\n";
+	LoggedIn = false;
+}

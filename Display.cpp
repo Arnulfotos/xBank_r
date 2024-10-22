@@ -49,6 +49,7 @@ void Display::MenuAdmin() {
     std::cout << "2.\tEliminar usuario\n";
     std::cout << "3.\tListar usuarios\n";
     std::cout << "4.\tEditar usuarios\n";
+    std::cout << "5.\tRevisar usuario\n";
     std::cout << "\n9.\tLog out\n";
     std::cout << '\n';
     

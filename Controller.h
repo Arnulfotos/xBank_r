@@ -8,6 +8,6 @@ class Controller
 public:
 	Display DisplayOnScreen;
 	int input;
-	void LoadOperations(Session logger, Accounts lista);
+	void LoadOperations(Session &logger, Accounts &lista);
 };
 
